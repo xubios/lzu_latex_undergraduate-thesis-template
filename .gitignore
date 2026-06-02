@@ -1,0 +1,35 @@
+# TeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+*.thm
+*.xdv
+*.bcf
+*.run.xml
+
+# Generated PDFs from examples
+template.pdf
+
+# Local/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Do not publish commercial or personal font/signature files.
+fonts/*.ttf
+fonts/*.ttc
+fonts/*.otf
+figures/signature.*
+figures/*签名*
+figures/空白.png
+figures/single_step_trajectory_*.png
+figures/upload*.png
