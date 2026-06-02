@@ -100,19 +100,6 @@ latexmk -xelatex template.tex
 | `\Thanks`                                                                                                                              | 生成致谢页                         | 在其后填写致谢正文。                                                                                   |
 | `\Grade`                                                                                                                               | 生成毕业论文成绩表                 | 是否保留以学院要求为准。                                                                               |
 
-## 常用命令
-
-```tex
-\title{{中文标题第一行}{中文标题第二行}}
-\abstracttitle{中文摘要页标题第一行\\中文摘要页标题第二行}
-\entitle{{English Title Line 1}{English Title Line 2}}
-\author{学生姓名}
-\major{专业名称}
-\advisor{指导教师}
-\college{学院名称}
-\grade{2026 级}
-```
-
 签名和日期可在打印后手签，也可以在命令中插入图片：
 
 ```tex
