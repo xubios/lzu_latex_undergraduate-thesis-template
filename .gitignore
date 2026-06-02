@@ -15,8 +15,7 @@
 *.bcf
 *.run.xml
 
-# Generated PDFs from examples
-template.pdf
+
 
 # Local/editor files
 .DS_Store
