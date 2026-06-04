@@ -327,8 +327,18 @@ def predict(x, weight, bias):
 
 这里填写致谢内容。致谢应向对研究、写作、资料、设备或其他方面提供帮助的个人和单位表示感谢。正式提交前，请根据实际情况替换本段文字。
 
-% 生成毕业论文（设计）成绩表。
-% 是否保留以学院要求为准；不需要时可删除或注释本行。
+
+% 成绩表相关变量（清空，打印后手写）
+\supervisorcomment={}           % 导师评语留空
+\recommendedgrade={}            % 建议成绩留空
+\supervisorsignature={}
+\committeecomment={}            % 答辩委员会意见留空
+\committeesignature={}          % 答辩委员会负责人签字留空
+\finalgrade={}                  % 最终成绩留空
+% 生成常规成绩表
 \Grade
+
+% 优秀论文进行推优答辩后启用
+% \OutstandingGrade
 
 \end{document}
