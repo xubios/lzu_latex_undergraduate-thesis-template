@@ -81,7 +81,8 @@ latexmk -xelatex template.tex
 | `\author`、`\major`、`\advisor`、`\college`、`\grade`                                                                          | 封面基本信息                       | 按个人实际信息替换。                                                                                   |
 | `\maketitle`                                                                                                                           | 生成封面                           | 应放在基本信息之后。                                                                                   |
 | `\mysignature`、`\mytime`、`\teachersignature`、`\teachertime`                                                                   | 诚信责任书和授权声明中的签名、日期 | 打印后手签可留空；电子签名可填入图片命令，但不要提交个人签名图片到公开仓库。                           |
-| `\supervisorsignature`、`\committeesignature`、`\recommendedgrade`、`\finalgrade`、`\supervisorcomment`、`\committeecomment` | 成绩页相关字段                     | 不需要电子成绩页时可保持为空，或按学院要求删除/注释 `\Grade`。                                       |
+| `\supervisorsignature`、`\committeesignature`、`\recommendedgrade`、`\finalgrade`、`\supervisorcomment`、`\committeecomment` | 常规成绩页相关字段                 | 不需要电子成绩页时可保持为空，或按学院要求删除/注释 `\Grade`。                                       |
+| `\outstandingcommitteesignature`、`\outstandingcommitteecomment`                                                               | 优秀论文推优成绩页相关字段         | 启用 `\OutstandingGrade` 时填写；常规成绩页无需使用。                                                |
 | `\makestatement`                                                                                                                       | 生成诚信责任书和授权声明           | 通常保留。                                                                                             |
 | `\frontmatter`                                                                                                                         | 开始前置部分                       | 用于摘要、目录等，页码使用罗马数字。                                                                   |
 | `\ZhAbstract{正文}{关键词}`                                                                                                            | 中文摘要和中文关键词               | 中文摘要通常 300--400 字；关键词建议 3--8 个。                                                         |
@@ -98,7 +99,7 @@ latexmk -xelatex template.tex
 | `\bibdatabase{bib/template}`、`\printbib`                                                                                            | 指定并打印参考文献                 | BibTeX 条目写在 `bib/template.bib`。                                                                 |
 | `\Appendix`                                                                                                                            | 生成附录页                         | 没有附录时可删除这一段。                                                                               |
 | `\Thanks`                                                                                                                              | 生成致谢页                         | 在其后填写致谢正文。                                                                                   |
-| `\Grade`                                                                                                                               | 生成毕业论文成绩表                 | 是否保留以学院要求为准。                                                                               |
+| `\Grade`、`\OutstandingGrade`                                                                                                           | 生成毕业论文成绩表                 | 默认使用 `\Grade`；优秀论文推优答辩后如需推优成绩表，可改用 `\OutstandingGrade`。                    |
 
 签名和日期可在打印后手签，也可以在命令中插入图片：
 

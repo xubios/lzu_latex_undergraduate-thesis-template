@@ -43,23 +43,17 @@
 \maketitle
 
 %==============================
-% 诚信责任书、授权声明、成绩表字段
+% 诚信责任书和授权声明字段
 %==============================
 % 签名和日期可打印后手签，因此可以留空。
 % 如需电子签名，可在花括号中放入 \includegraphics[width=...]{figures/签名文件}。
 % 不建议将个人签名图片提交到公开仓库。
+
+% 示例：\mysignature{\includegraphics[width=60pt]{figures/电子签名.jpg}}
 \mysignature{}
 \mytime{}
 \teachersignature{}
-
-% 以下字段主要用于成绩表。若学院不要求在电子版中放成绩表，可保持为空，并在文末删除或注释 \Grade。
-\supervisorsignature{}
 \teachertime{}
-\recommendedgrade{}
-\committeesignature{}
-\finalgrade{}
-\supervisorcomment{}
-\committeecomment{}
 
 % 生成诚信责任书和毕业论文（设计）使用授权声明。
 % 通常建议保留，具体以学院要求为准。
@@ -328,7 +322,7 @@ def predict(x, weight, bias):
 这里填写致谢内容。致谢应向对研究、写作、资料、设备或其他方面提供帮助的个人和单位表示感谢。正式提交前，请根据实际情况替换本段文字。
 
 
-% 成绩表相关变量（清空，打印后手写）
+% 成绩表相关变量
 \supervisorcomment={}           % 导师评语留空
 \recommendedgrade={}            % 建议成绩留空
 \supervisorsignature={}
@@ -338,7 +332,9 @@ def predict(x, weight, bias):
 % 生成常规成绩表
 \Grade
 
-% 优秀论文进行推优答辩后启用
+% 优秀论文进行推优答辩后，通常注释上方 \Grade，并填写以下字段后启用 \OutstandingGrade。
+% \outstandingcommitteecomment={}   % 推优答辩委员会意见
+% \outstandingcommitteesignature={} % 推优答辩委员会负责人签字
 % \OutstandingGrade
 
 \end{document}
