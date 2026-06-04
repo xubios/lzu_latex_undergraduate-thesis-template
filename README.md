@@ -19,7 +19,7 @@
 - 早期模板工作参考了 2013 级核科学与技术学院胡斌、沈周等同学的本科论文 LaTeX 模板实践。
 - 后续模板工作参考了 2016 级物理科学与技术学院余航等同学对兰州大学本科论文排版要求的整理与实现。
 - 模板中部分结构也参考了公开社区中的 LZUThesis 系列项目，例如 `suchot/LZUThesis2017`、`yuhldr/LZUThesis2020` 等。
-- 特别感谢 Overleaf 上 `xiashj2021` 学长维护和分享的兰州大学本科生毕业论文模板，其示例内容和使用说明为本模板整理提供了重要参考。
+- 特别感谢 Overleaf 上 `xiashj2021` 夏生杰学长维护和分享的兰州大学本科生毕业论文模板，其示例内容和使用说明为本模板整理提供了重要参考。
 - 参考文献样式与中文文献支持吸收了社区同学的实践经验，特别感谢曾对中文参考文献条目处理提供代码和建议的贡献者。
 - 当前 `LZUThesis_xb.cls` 在上述基础上进一步整理了 2026 届本科毕业论文（设计）格式要求，修正了封面、题目换行、摘要、目录、标题英文、页眉页码、图表目录、参考文献、致谢和成绩表等细节，使其更接近当前兰州大学本科论文写作规范。
 
@@ -38,6 +38,9 @@
 │   ├── lzu2020.pdf      # 封面校徽，类文件默认使用
 │   ├── lzu2020.png      # 正文示例图片
 │   └── lzu2007.png      # 正文并列图片示例
+├── .vscode/
+│   ├── extensions.json  # 推荐安装 LaTeX Workshop
+│   └── settings.json    # VS Code 编译配方
 └── fonts/
     └── README.md
 ```
@@ -65,7 +68,79 @@ latexmk -xelatex template.tex
 
 模板默认从 `fonts/` 目录加载宋体、黑体、仿宋和 Arial Bold 等字体，以便在不同机器上获得更稳定的排版效果。需要准备的文件名为 `SimSun.ttc`、`SimHei.ttf`、`SimFang.ttf` 和 `Arialbd.ttf`。
 
-由于这些字体通常涉及商业授权，公开 GitHub 仓库中不建议直接上传字体文件。请使用者在本机合法拥有字体的前提下，自行将字体文件放入 `fonts/` 目录。详见 [fonts/README.md](fonts/README.md)。
+由于这些字体通常涉及商业授权，公开 GitHub 仓库中不建议直接上传字体文件，也不建议在 README 中提供非官方下载链接。请使用者在本机合法拥有字体的前提下，自行将字体文件放入 `fonts/` 目录。详见 [fonts/README.md](fonts/README.md)。
+
+字体准备速查：
+
+```text
+fonts/
+├── SimSun.ttc    # 宋体
+├── SimHei.ttf    # 黑体
+├── SimFang.ttf   # 仿宋
+└── Arialbd.ttf   # Arial Bold
+```
+
+Windows 用户通常可以在 `C:\Windows\Fonts` 中找到对应字体文件；Overleaf 用户需要把这些字体文件上传到项目的 `fonts/` 目录，并注意文件名大小写完全一致。
+
+## Overleaf 使用方法
+
+1. 在 GitHub 页面下载本模板压缩包，或将仓库导入 Overleaf。
+2. 在 Overleaf 项目中确认存在 `LZUThesis_xb.cls`、`template.tex`、`bib/`、`figures/` 和 `fonts/`。
+3. 将合法获得的 `SimSun.ttc`、`SimHei.ttf`、`SimFang.ttf`、`Arialbd.ttf` 上传到 `fonts/` 目录。
+4. 打开 Overleaf 左上角菜单，将 Compiler 设置为 `XeLaTeX`。
+5. 将主文件设置为 `template.tex`。
+6. 首次编译后，如果参考文献或交叉引用未更新，可在 Recompile 菜单中选择从头重新编译，或连续编译两到三次。
+7. 如果仍然提示字体找不到，优先检查 `fonts/` 目录和文件名大小写。
+
+## VS Code 使用方法
+
+本仓库已经提供 `.vscode/settings.json` 和 `.vscode/extensions.json`。本地使用时推荐如下配置：
+
+1. 安装 TeX Live 2024 或更新版本，并确保命令行可以运行 `xelatex`、`bibtex` 和 `latexmk`。
+2. 安装 VS Code。
+3. 打开本项目文件夹，不要只打开单个 `template.tex` 文件。
+4. 按 VS Code 提示安装推荐扩展 LaTeX Workshop。
+5. 将合法获得的字体文件放入 `fonts/` 目录。
+6. 打开 `template.tex`，选择 LaTeX Workshop 的 `latexmk (xelatex)` 配方编译。
+7. 如果需要手动处理参考文献，可选择 `xelatex -> bibtex -> xelatex*2` 配方。
+8. 编译成功后，PDF 会在 VS Code 标签页中打开。
+
+常见问题：
+
+- VS Code 提示找不到 `xelatex` 或 `latexmk`：通常是 TeX Live 没安装，或 TeX Live 的 `bin` 目录没有加入系统 `PATH`。
+- 参考文献显示为问号：使用 `xelatex -> bibtex -> xelatex*2` 配方完整编译。
+- 中文字体找不到：检查 `fonts/` 目录、字体文件名和大小写。
+- 只打开单个 `.tex` 文件导致配置不生效：请用 VS Code 打开整个项目文件夹。
+
+## LaTeX 写作速查
+
+下面是写本科毕业论文时最常用的基础命令。正式写作时，优先修改 `template.tex` 中已有示例；不熟悉 LaTeX 时，不建议一开始大幅改动 `LZUThesis_xb.cls`。
+
+| 目的 | 写法示例 | 说明 |
+| --- | --- | --- |
+| 新建一章 | `\chapter{绪论}` | 正文章节从 `\mainmatter` 后开始。 |
+| 新建一节 | `\section{研究背景}` | 建议正式论文最多使用到 `\subsection`。 |
+| 新建小节 | `\subsection{问题定义}` | 更细内容可用段落或列表承接。 |
+| 普通段落 | 段落之间留一个空行 | 不要只用一个回车分段。 |
+| 加粗 | `\textbf{重要内容}` | 少量强调时使用。 |
+| 行内公式 | `$y=ax+b$` | 适合短公式。 |
+| 独立公式 | `\begin{equation} ... \end{equation}` | 配合 `\label{}` 和 `\eqref{}` 引用。 |
+| 插入图片 | `\includegraphics[width=0.6\textwidth]{figures/name.png}` | 图片建议放入 `figures/`。 |
+| 图题和标签 | `\caption{图题}`、`\label{fig:name}` | `\label{}` 通常放在 `\caption{}` 后。 |
+| 引用图表公式 | `图~\ref{fig:name}`、`式~\eqref{eq:name}` | 避免手动写编号。 |
+| 文献上标引用 | `\newupcite{key}` | `key` 来自 `bib/template.bib`。 |
+| 普通文献引用 | `\cite{key}` | 适合括号式或正文式引用。 |
+| 无序列表 | `\begin{itemize} ... \end{itemize}` | 每项用 `\item` 开头。 |
+| 有序列表 | `\begin{enumerate} ... \end{enumerate}` | 每项用 `\item` 开头。 |
+| 脚注 | `文本\footnote{脚注内容}` | 正文中少量补充说明可用。 |
+
+常见写作习惯：
+
+- 中文正文直接输入即可；英文和数字通常不需要额外处理。
+- 文件名、图片名和文献键尽量使用英文、数字、下划线，少用空格和特殊符号。
+- 每个重要图、表、公式、算法和代码块都建议设置 `\label{}`，正文中用 `\ref{}` 或 `\eqref{}` 自动引用。
+- 修改目录、图表、公式编号或参考文献后，至少重新编译两次；含参考文献时按完整编译顺序运行。
+- 遇到问号引用，先检查 `\label{}`、`\ref{}`、`.bib` 条目键是否一致，再完整编译。
 
 ## 使用方法
 
@@ -103,7 +178,7 @@ latexmk -xelatex template.tex
 | `\maketitle`                                                                                                                           | 生成封面                           | 应放在基本信息之后。                                                                                   |
 | `\mysignature`、`\mytime`、`\teachersignature`、`\teachertime`                                                                   | 诚信责任书和授权声明中的签名、日期 | 打印后手签可留空；电子签名可填入图片命令，但不要提交个人签名图片到公开仓库。                           |
 | `\supervisorsignature`、`\committeesignature`、`\recommendedgrade`、`\finalgrade`、`\supervisorcomment`、`\committeecomment` | 常规成绩页相关字段                 | 不需要电子成绩页时可保持为空，或按学院要求删除/注释 `\Grade`。                                       |
-| `\outstandingcommitteesignature`、`\outstandingcommitteecomment`                                                               | 优秀论文推优成绩页相关字段         | 启用 `\OutstandingGrade` 时填写；常规成绩页无需使用。                                                |
+| `\outstandingcommitteesignature`、`\outstandingcommitteecomment`                                                                     | 优秀论文推优成绩页相关字段         | 启用 `\OutstandingGrade` 时填写；常规成绩页无需使用。                                                |
 | `\makestatement`                                                                                                                       | 生成诚信责任书和授权声明           | 通常保留。                                                                                             |
 | `\frontmatter`                                                                                                                         | 开始前置部分                       | 用于摘要、目录等，页码使用罗马数字。                                                                   |
 | `\ZhAbstract{正文}{关键词}`                                                                                                            | 中文摘要和中文关键词               | 中文摘要通常 300--400 字；关键词建议 3--8 个。                                                         |
@@ -120,7 +195,7 @@ latexmk -xelatex template.tex
 | `\bibdatabase{bib/template}`、`\printbib`                                                                                            | 指定并打印参考文献                 | BibTeX 条目写在 `bib/template.bib`。                                                                 |
 | `\Appendix`                                                                                                                            | 生成附录页                         | 没有附录时可删除这一段。                                                                               |
 | `\Thanks`                                                                                                                              | 生成致谢页                         | 在其后填写致谢正文。                                                                                   |
-| `\Grade`、`\OutstandingGrade`                                                                                                           | 生成毕业论文成绩表                 | 默认使用 `\Grade`；优秀论文推优答辩后如需推优成绩表，可改用 `\OutstandingGrade`。                    |
+| `\Grade`、`\OutstandingGrade`                                                                                                        | 生成毕业论文成绩表                 | 默认使用 `\Grade`；优秀论文推优答辩后如需推优成绩表，可改用 `\OutstandingGrade`。                  |
 
 签名和日期可在打印后手签，也可以在命令中插入图片：
 

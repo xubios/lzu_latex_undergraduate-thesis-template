@@ -14,3 +14,36 @@
 如果复制得到的文件名是小写，例如 `simsun.ttc`，建议重命名为模板要求的 `SimSun.ttc`。字体缺失或文件名不一致时，XeLaTeX 通常会报出找不到字体文件的错误。
 
 若你希望模板完全依赖系统字体或开源字体，可以在 `LZUThesis_xb.cls` 开头修改 `\setCJKmainfont`、`\setCJKsansfont`、`\setCJKfamilyfont` 等字体配置。
+
+## Windows 本地配置步骤
+
+1. 打开 `C:\Windows\Fonts`。
+2. 找到宋体、黑体、仿宋和 Arial Bold 对应的字体文件。
+3. 将字体文件复制到本项目的 `fonts/` 目录。
+4. 将文件名改为模板要求的名称：
+   - `simsun.ttc` 改为 `SimSun.ttc`
+   - `simhei.ttf` 改为 `SimHei.ttf`
+   - `simfang.ttf` 改为 `SimFang.ttf`
+   - `arialbd.ttf` 改为 `Arialbd.ttf`
+5. 回到项目根目录，使用 XeLaTeX 编译 `template.tex`。
+
+如果 Windows 资源管理器中看不到真实文件名，可以右键字体文件查看属性，或先复制到普通文件夹后再重命名。
+
+## Overleaf 配置步骤
+
+1. 在 Overleaf 项目中新建或打开 `fonts/` 目录。
+2. 上传 `SimSun.ttc`、`SimHei.ttf`、`SimFang.ttf` 和 `Arialbd.ttf`。
+3. 确认文件名大小写与本说明完全一致。Overleaf/Linux 对大小写敏感，`simsun.ttc` 和 `SimSun.ttc` 会被视为不同文件。
+4. 在 Overleaf 菜单中将编译器设置为 XeLaTeX。
+5. 如果使用参考文献，按 XeLaTeX、BibTeX、XeLaTeX、XeLaTeX 的顺序完整编译。
+
+## 常见报错
+
+- `font not found` 或 `cannot find font file`：通常是字体文件缺失、文件名大小写不一致，或没有放在 `fonts/` 目录。
+- 中文显示为空白或方框：通常是没有使用 XeLaTeX，或字体文件未正确加载。
+- 本地能编译、Overleaf 不能编译：优先检查 Overleaf 中的字体文件名大小写和编译器设置。
+- 不想使用随项目上传的字体：可以改 `LZUThesis_xb.cls` 开头的字体配置，改为系统中已经安装且有合法授权的字体名称。
+
+## 关于字体下载链接
+
+本模板不提供第三方字体下载链接。宋体、黑体、仿宋和 Arial Bold 通常随 Windows 或相关授权软件提供，是否可以复制、上传或分发取决于对应软件和字体的授权条款。公开仓库中请不要提交字体文件本身。

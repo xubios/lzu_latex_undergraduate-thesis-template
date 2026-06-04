@@ -20,7 +20,9 @@
 # Local/editor files
 .DS_Store
 Thumbs.db
-.vscode/
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
 .idea/
 
 # Do not publish commercial or personal font/signature files.
