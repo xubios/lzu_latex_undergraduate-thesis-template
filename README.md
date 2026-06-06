@@ -31,6 +31,7 @@
 .
 ├── LZUThesis_xb.cls
 ├── template.tex
+├── CONFIG.md           # LaTeX 环境配置教程
 ├── bib/
 │   ├── lzubib.bst
 │   └── template.bib
@@ -48,6 +49,8 @@
 ## 编译环境
 
 推荐使用 TeX Live 2024 或更新版本，并使用 XeLaTeX 编译。
+
+如果第一次配置 LaTeX 环境，建议先阅读 [CONFIG.md](CONFIG.md)，其中包含 Overleaf、Windows、VS Code、命令行编译和常见报错说明。
 
 如果正文中使用 BibTeX 参考文献，推荐编译顺序：
 
@@ -82,35 +85,11 @@ fonts/
 
 Windows 用户通常可以在 `C:\Windows\Fonts` 中找到对应字体文件；Overleaf 用户需要把这些字体文件上传到项目的 `fonts/` 目录，并注意文件名大小写完全一致。
 
-## Overleaf 使用方法
+## 配置教程
 
-1. 在 GitHub 页面下载本模板压缩包，或将仓库导入 Overleaf。
-2. 在 Overleaf 项目中确认存在 `LZUThesis_xb.cls`、`template.tex`、`bib/`、`figures/` 和 `fonts/`。
-3. 将合法获得的 `SimSun.ttc`、`SimHei.ttf`、`SimFang.ttf`、`Arialbd.ttf` 上传到 `fonts/` 目录。
-4. 打开 Overleaf 左上角菜单，将 Compiler 设置为 `XeLaTeX`。
-5. 将主文件设置为 `template.tex`。
-6. 首次编译后，如果参考文献或交叉引用未更新，可在 Recompile 菜单中选择从头重新编译，或连续编译两到三次。
-7. 如果仍然提示字体找不到，优先检查 `fonts/` 目录和文件名大小写。
-
-## VS Code 使用方法
-
-本仓库已经提供 `.vscode/settings.json` 和 `.vscode/extensions.json`。本地使用时推荐如下配置：
-
-1. 安装 TeX Live 2024 或更新版本，并确保命令行可以运行 `xelatex`、`bibtex` 和 `latexmk`。
-2. 安装 VS Code。
-3. 打开本项目文件夹，不要只打开单个 `template.tex` 文件。
-4. 按 VS Code 提示安装推荐扩展 LaTeX Workshop。
-5. 将合法获得的字体文件放入 `fonts/` 目录。
-6. 打开 `template.tex`，选择 LaTeX Workshop 的 `latexmk (xelatex)` 配方编译。
-7. 如果需要手动处理参考文献，可选择 `xelatex -> bibtex -> xelatex*2` 配方。
-8. 编译成功后，PDF 会在 VS Code 标签页中打开。
-
-常见问题：
-
-- VS Code 提示找不到 `xelatex` 或 `latexmk`：通常是 TeX Live 没安装，或 TeX Live 的 `bin` 目录没有加入系统 `PATH`。
-- 参考文献显示为问号：使用 `xelatex -> bibtex -> xelatex*2` 配方完整编译。
-- 中文字体找不到：检查 `fonts/` 目录、字体文件名和大小写。
-- 只打开单个 `.tex` 文件导致配置不生效：请用 VS Code 打开整个项目文件夹。
+- Overleaf、Windows、VS Code、命令行编译和常见报错请见 [CONFIG.md](CONFIG.md)。
+- 字体文件准备和授权说明请见 [fonts/README.md](fonts/README.md)。
+- 本仓库已提供 `.vscode/settings.json` 和 `.vscode/extensions.json`，VS Code 用户打开整个项目文件夹后可按提示安装 LaTeX Workshop，并使用内置的 XeLaTeX 编译配方。
 
 ## LaTeX 写作速查
 
