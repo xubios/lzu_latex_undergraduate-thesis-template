@@ -5,6 +5,8 @@
 关键词：兰州大学毕业论文、兰州大学本科毕业论文、兰大毕业论文模板、兰州大学论文 LaTeX 模板、LZU thesis template、Lanzhou University undergraduate thesis template。
 
 > 说明：本模板不是兰州大学官方发布模板。提交前请以学院和教务处当年最终通知为准。
+>
+> 重要：本仓库因字体版权原因不包含宋体、黑体、仿宋和 Arial Bold 字体文件，因此不是下载后立刻就能编译。首次使用前，请先按 [字体说明](#字体说明) 或 [fonts/README.md](fonts/README.md) 准备合法获得的字体文件，并放入 `fonts/` 目录。
 
 ## 适配依据
 
@@ -71,6 +73,8 @@ latexmk -xelatex template.tex
 
 ## 字体说明
 
+本模板不是下载后马上就能运行的完整二进制包。为了避免侵犯字体版权，仓库中不会上传字体文件，使用者必须先自行准备合法获得的字体文件。
+
 模板默认从 `fonts/` 目录加载宋体、黑体、仿宋和 Arial Bold 等字体，以便在不同机器上获得更稳定的排版效果。需要准备的文件名为 `SimSun.ttc`、`SimHei.ttf`、`SimFang.ttf` 和 `Arialbd.ttf`。
 
 由于这些字体通常涉及商业授权，公开 GitHub 仓库中不建议直接上传字体文件，也不建议在 README 中提供非官方下载链接。请使用者在本机合法拥有字体的前提下，自行将字体文件放入 `fonts/` 目录。详见 [fonts/README.md](fonts/README.md)。
@@ -125,7 +129,7 @@ Windows 用户通常可以在 `C:\Windows\Fonts` 中找到对应字体文件；O
 
 ## 使用方法
 
-1. 将合法获得的字体文件放入 `fonts/` 目录。
+1. 先将合法获得的字体文件放入 `fonts/` 目录。缺少字体时，模板通常不能直接编译。
 2. 修改 `template.tex` 中的题目、作者、学院、专业、年级和导师信息。
 3. 在 `\ZhAbstract{...}{...}` 和 `\EnAbstract{...}{...}` 中填写中英文摘要与关键词。
 4. 在 `\mainmatter` 后写正文。
