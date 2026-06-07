@@ -31,6 +31,34 @@
 
 如果 Windows 资源管理器中看不到真实文件名，可以右键字体文件查看属性，或先复制到普通文件夹后再重命名。
 
+## macOS 和 Linux 配置说明
+
+macOS 和 Linux 通常不会默认提供 `SimSun.ttc`、`SimHei.ttf`、`SimFang.ttf` 这几个 Windows 字体文件名。直接下载本仓库后，如果没有先准备字体，XeLaTeX 通常会报找不到字体文件。
+
+推荐做法：
+
+1. 从自己合法授权的 Windows、Office 或学校提供的授权环境中取得对应字体文件。
+2. 将字体文件复制到本项目的 `fonts/` 目录。
+3. 将文件名改为模板要求的名称：`SimSun.ttc`、`SimHei.ttf`、`SimFang.ttf`、`Arialbd.ttf`。
+4. 使用 XeLaTeX 编译 `template.tex`。
+
+如果你希望使用 macOS 或 Linux 已安装的中文字体，可以先查看本机字体。
+
+macOS：
+
+```bash
+find /System/Library/Fonts /Library/Fonts ~/Library/Fonts -iname "*Songti*" -o -iname "*Heiti*" -o -iname "*Fang*" -o -iname "*Arial*"
+```
+
+Linux：
+
+```bash
+fc-list | grep -Ei "simsun|simhei|fangsong|song|hei|arial"
+fc-match "SimSun"
+```
+
+注意：找到类似字体不等于本模板会自动使用它。当前 `LZUThesis_xb.cls` 默认按 `fonts/` 目录中的具体文件名加载字体。如果不用 `SimSun.ttc`、`SimHei.ttf`、`SimFang.ttf` 和 `Arialbd.ttf`，需要自行修改 `LZUThesis_xb.cls` 中的字体配置。这样可以提高跨平台兼容性，但最终 PDF 字形可能与学校规范要求的宋体、黑体、仿宋略有差异。
+
 ## Overleaf 配置步骤
 
 1. 在 Overleaf 项目中新建或打开 `fonts/` 目录。

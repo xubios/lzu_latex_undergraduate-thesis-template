@@ -91,6 +91,8 @@ fonts/
 
 Windows 用户通常可以在 `C:\Windows\Fonts` 中找到对应字体文件；Overleaf 用户需要把这些字体文件上传到项目的 `fonts/` 目录，并注意文件名大小写完全一致。
 
+macOS 和 Linux 用户通常不会自带 `SimSun.ttc`、`SimHei.ttf`、`SimFang.ttf` 这几个 Windows 字体文件名。建议先从自己合法授权的 Windows、Office 或学校提供的授权环境中取得对应字体文件，再放入 `fonts/` 目录；如果希望直接使用 macOS/Linux 已安装字体或开源字体，需要在 `LZUThesis_xb.cls` 中修改字体配置，具体见 [fonts/README.md](fonts/README.md)。
+
 ## 配置教程
 
 - Overleaf、Windows、VS Code、命令行编译和常见报错请见 [CONFIG.md](CONFIG.md)。
