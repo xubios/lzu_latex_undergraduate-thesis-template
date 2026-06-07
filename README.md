@@ -1,6 +1,6 @@
 # 兰州大学本科毕业论文（设计）LaTeX 模板
 
-这是一个面向兰州大学本科毕业论文（设计）的 XeLaTeX 模板。当前主类文件为 `LZUThesis_xb.cls`，示例入口为 `template.tex`。
+这是一个面向兰州大学本科毕业论文（设计）的 XeLaTeX 模板。当前主类文件为 `LZUThesis_xb.cls`，示例入口为 `template.tex`，xb 学长倾情奉献。
 
 关键词：兰州大学毕业论文、兰州大学本科毕业论文、兰大毕业论文模板、兰州大学论文 LaTeX 模板、LZU thesis template、Lanzhou University undergraduate thesis template。
 
