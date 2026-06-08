@@ -1,6 +1,6 @@
 # 兰州大学本科毕业论文（设计）LaTeX 模板
 
-这是一个面向兰州大学本科毕业论文（设计）的 XeLaTeX 模板。当前主类文件为 `LZUThesis_xb.cls`，示例入口为 `template.tex`，xb 学长倾情奉献。
+这是一个面向兰州大学本科毕业论文（设计）的 XeLaTeX 模板，xb 学长倾情奉献。当前主类文件为 `LZUThesis_xb.cls`，示例入口为 `template.tex`。
 
 关键词：兰州大学毕业论文、兰州大学本科毕业论文、兰大毕业论文模板、兰州大学论文 LaTeX 模板、LZU thesis template、Lanzhou University undergraduate thesis template。
 
@@ -121,23 +121,23 @@ macOS 和 Linux 用户通常不会自带 `SimSun.ttc`、`SimHei.ttf`、`SimFang.
 
 下面是写本科毕业论文时最常用的基础命令。正式写作时，优先修改 `template.tex` 中已有示例；不熟悉 LaTeX 时，不建议一开始大幅改动 `LZUThesis_xb.cls`。
 
-| 目的 | 写法示例 | 说明 |
-| --- | --- | --- |
-| 新建一章 | `\chapter{绪论}` | 正文章节从 `\mainmatter` 后开始。 |
-| 新建一节 | `\section{研究背景}` | 建议正式论文最多使用到 `\subsection`。 |
-| 新建小节 | `\subsection{问题定义}` | 更细内容可用段落或列表承接。 |
-| 普通段落 | 段落之间留一个空行 | 不要只用一个回车分段。 |
-| 加粗 | `\textbf{重要内容}` | 少量强调时使用。 |
-| 行内公式 | `$y=ax+b$` | 适合短公式。 |
-| 独立公式 | `\begin{equation} ... \end{equation}` | 配合 `\label{}` 和 `\eqref{}` 引用。 |
-| 插入图片 | `\includegraphics[width=0.6\textwidth]{figures/name.png}` | 图片建议放入 `figures/`。 |
-| 图题和标签 | `\caption{图题}`、`\label{fig:name}` | `\label{}` 通常放在 `\caption{}` 后。 |
-| 引用图表公式 | `图~\ref{fig:name}`、`式~\eqref{eq:name}` | 避免手动写编号。 |
-| 文献上标引用 | `\newupcite{key}` | `key` 来自 `bib/template.bib`。 |
-| 普通文献引用 | `\cite{key}` | 适合括号式或正文式引用。 |
-| 无序列表 | `\begin{itemize} ... \end{itemize}` | 每项用 `\item` 开头。 |
-| 有序列表 | `\begin{enumerate} ... \end{enumerate}` | 每项用 `\item` 开头。 |
-| 脚注 | `文本\footnote{脚注内容}` | 正文中少量补充说明可用。 |
+| 目的         | 写法示例                                                    | 说明                                      |
+| ------------ | ----------------------------------------------------------- | ----------------------------------------- |
+| 新建一章     | `\chapter{绪论}`                                          | 正文章节从 `\mainmatter` 后开始。       |
+| 新建一节     | `\section{研究背景}`                                      | 建议正式论文最多使用到 `\subsection`。  |
+| 新建小节     | `\subsection{问题定义}`                                   | 更细内容可用段落或列表承接。              |
+| 普通段落     | 段落之间留一个空行                                          | 不要只用一个回车分段。                    |
+| 加粗         | `\textbf{重要内容}`                                       | 少量强调时使用。                          |
+| 行内公式     | `$y=ax+b$`                                                | 适合短公式。                              |
+| 独立公式     | `\begin{equation} ... \end{equation}`                     | 配合 `\label{}` 和 `\eqref{}` 引用。  |
+| 插入图片     | `\includegraphics[width=0.6\textwidth]{figures/name.png}` | 图片建议放入 `figures/`。               |
+| 图题和标签   | `\caption{图题}`、`\label{fig:name}`                    | `\label{}` 通常放在 `\caption{}` 后。 |
+| 引用图表公式 | `图~\ref{fig:name}`、`式~\eqref{eq:name}`               | 避免手动写编号。                          |
+| 文献上标引用 | `\newupcite{key}`                                         | `key` 来自 `bib/template.bib`。       |
+| 普通文献引用 | `\cite{key}`                                              | 适合括号式或正文式引用。                  |
+| 无序列表     | `\begin{itemize} ... \end{itemize}`                       | 每项用 `\item` 开头。                   |
+| 有序列表     | `\begin{enumerate} ... \end{enumerate}`                   | 每项用 `\item` 开头。                   |
+| 脚注         | `文本\footnote{脚注内容}`                                 | 正文中少量补充说明可用。                  |
 
 常见写作习惯：
 
