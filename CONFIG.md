@@ -1,12 +1,22 @@
 # LaTeX 环境配置教程
 
-本文面向第一次使用本模板的同学，说明如何在 Overleaf 和 Windows + VS Code 中配置并编译 `template.tex`。
+本文面向第一次使用本模板的同学，说明如何在 Overleaf 和 Windows + VS Code 中配置并编译模板。
 
 如果只是想尽快开始写论文，优先看“最快开始”；遇到问题时再看后面的常见报错。
 
-重要提醒：本仓库因字体版权原因不包含宋体、黑体、仿宋和 Arial Bold 字体文件，所以下载或克隆后不能马上编译。第一次使用前必须先准备合法获得的字体文件，并放入 `fonts/` 目录。
+重要提醒：正式入口 `template.tex` 因字体版权原因不包含宋体、黑体、仿宋和 Arial Bold 字体文件，正式写作或提交前需要先准备合法字体，并放入 `fonts/` 目录。Overleaf 新手如果只是想先跑通模板，可以先使用 `template-overleaf.tex`，不需要上传字体。
 
 ## 最快开始
+
+如果使用 Overleaf 且只是想先预览：
+
+1. 下载、克隆或从 GitHub 导入本仓库。
+2. 将 Compiler 设置为 `XeLaTeX`。
+3. 将 Main document 设置为 `template-overleaf.tex`。
+4. 点击 Recompile。
+5. 能正常预览后，再根据需要切换到正式入口 `template.tex`。
+
+如果准备正式写作或提交：
 
 1. 下载或克隆本仓库。
 2. 准备合法获得的字体文件，并放入 `fonts/` 目录：

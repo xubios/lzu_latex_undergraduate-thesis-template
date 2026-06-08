@@ -6,7 +6,7 @@
 
 > 说明：本模板不是兰州大学官方发布模板。提交前请以学院和教务处当年最终通知为准。
 >
-> 重要：本仓库因字体版权原因不包含宋体、黑体、仿宋和 Arial Bold 字体文件，因此不是下载后立刻就能编译。首次使用前，请先按 [字体说明](#字体说明) 或 [fonts/README.md](fonts/README.md) 准备合法获得的字体文件，并放入 `fonts/` 目录。
+> 重要：正式入口 `template.tex` 因字体版权原因不包含宋体、黑体、仿宋和 Arial Bold 字体文件，首次正式使用前请先按 [字体说明](#字体说明) 或 [fonts/README.md](fonts/README.md) 准备合法获得的字体文件，并放入 `fonts/` 目录。若只是想在 Overleaf 上先跑通模板，可直接使用免上传字体入口 `template-overleaf.tex`。
 
 ## 适配依据
 
@@ -52,13 +52,18 @@
     └── README.md
 ```
 
+## 入口选择
+
+- 想先在 Overleaf 上快速预览：使用 `template-overleaf.tex`，不需要上传字体，适合零基础先确认模板能编译。
+- 准备正式写作或提交：使用 `template.tex`，需要自行准备合法字体，排版更接近学校规范。
+
 ## 编译环境
 
 推荐使用 TeX Live 2024 或更新版本，并使用 XeLaTeX 编译。
 
 如果第一次配置 LaTeX 环境，建议先阅读 [CONFIG.md](CONFIG.md)，其中包含 Overleaf、Windows、VS Code、命令行编译和常见报错说明。
 
-本仓库提供两个入口：
+两个入口的具体区别：
 
 - `template.tex`：正式入口。默认从 `fonts/` 目录加载宋体、黑体、仿宋和 Arial Bold，更接近学校写作规范，正式提交前推荐使用。
 - `template-overleaf.tex`：Overleaf 免上传字体体验入口。使用 TeX Live/Overleaf 通常自带的 Fandol 字体近似替代，可以不上传字体先编译跑通，但字形与宋体、黑体、仿宋不完全一致。
@@ -80,7 +85,7 @@ latexmk -xelatex template.tex
 
 ## 字体说明
 
-本模板不是下载后马上就能运行的完整二进制包。为了避免侵犯字体版权，仓库中不会上传字体文件，使用者必须先自行准备合法获得的字体文件。
+正式入口 `template.tex` 不是下载后马上就能运行的完整二进制包。为了避免侵犯字体版权，仓库中不会上传字体文件，使用者需要先自行准备合法获得的字体文件。
 
 模板默认从 `fonts/` 目录加载宋体、黑体、仿宋和 Arial Bold 等字体，以便在不同机器上获得更稳定的排版效果。需要准备的文件名为 `SimSun.ttc`、`SimHei.ttf`、`SimFang.ttf` 和 `Arialbd.ttf`。
 
@@ -102,7 +107,7 @@ macOS 和 Linux 用户通常不会自带 `SimSun.ttc`、`SimHei.ttf`、`SimFang.
 
 为什么有些 Overleaf 模板不上传字体也能编译？
 
-部分模板使用 CTeX/Overleaf 默认字体，例如 Fandol 字体，因此可以直接编译。本模板为了更接近兰州大学写作规范中的宋体、黑体、仿宋效果，默认从 `fonts/` 目录加载指定字体文件。由于字体版权原因，仓库不提供字体文件或下载链接，使用者需要自行准备合法获得的字体。
+部分模板使用 CTeX/Overleaf 默认字体，例如 Fandol 字体，因此可以直接编译。本模板正式入口为了更接近兰州大学写作规范中的宋体、黑体、仿宋效果，默认从 `fonts/` 目录加载指定字体文件。由于字体版权原因，仓库不提供字体文件或下载链接；正式提交前，使用者需要自行准备合法获得的字体。
 
 如果只是想在 Overleaf 上先跑通模板，可以把 Main document 设置为 `template-overleaf.tex`。该入口不需要上传字体文件，但属于“体验/预览模式”；正式提交前，仍建议改回 `template.tex` 并准备规范字体。
 
