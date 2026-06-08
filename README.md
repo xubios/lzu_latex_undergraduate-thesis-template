@@ -34,7 +34,6 @@
 ```text
 .
 ├── LZUThesis_xb.cls
-├── LZUThesis_xb_overleaf.cls
 ├── template.tex           # 正式入口，默认使用 fonts/ 中的规范字体文件
 ├── template-overleaf.tex  # Overleaf 免上传字体体验入口，使用 Fandol 近似字体
 ├── CONFIG.md           # LaTeX 环境配置教程
