@@ -93,6 +93,10 @@ Windows 用户通常可以在 `C:\Windows\Fonts` 中找到对应字体文件；O
 
 macOS 和 Linux 用户通常不会自带 `SimSun.ttc`、`SimHei.ttf`、`SimFang.ttf` 这几个 Windows 字体文件名。建议先从自己合法授权的 Windows、Office 或学校提供的授权环境中取得对应字体文件，再放入 `fonts/` 目录；如果希望直接使用 macOS/Linux 已安装字体或开源字体，需要在 `LZUThesis_xb.cls` 中修改字体配置，具体见 [fonts/README.md](fonts/README.md)。
 
+为什么有些 Overleaf 模板不上传字体也能编译？
+
+部分模板使用 CTeX/Overleaf 默认字体，例如 Fandol 字体，因此可以直接编译。本模板为了更接近兰州大学写作规范中的宋体、黑体、仿宋效果，默认从 `fonts/` 目录加载指定字体文件。由于字体版权原因，仓库不提供字体文件或下载链接，使用者需要自行准备合法获得的字体。
+
 ## 配置教程
 
 - Overleaf、Windows、VS Code、命令行编译和常见报错请见 [CONFIG.md](CONFIG.md)。

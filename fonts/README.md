@@ -67,6 +67,12 @@ fc-match "SimSun"
 4. 在 Overleaf 菜单中将编译器设置为 XeLaTeX。
 5. 如果使用参考文献，按 XeLaTeX、BibTeX、XeLaTeX、XeLaTeX 的顺序完整编译。
 
+## 为什么有些 Overleaf 模板不上传字体也能编译
+
+部分模板使用 CTeX/Overleaf 默认字体，例如 Fandol 字体，因此可以不上传 Windows 字体也直接编译。本模板为了更接近兰州大学写作规范中的宋体、黑体、仿宋效果，默认从 `fonts/` 目录加载指定字体文件。
+
+这是一种“规范优先”的设计：PDF 字形更接近学校要求，但首次使用前必须准备字体。由于字体版权原因，本仓库不提供字体文件，也不提供第三方下载链接。
+
 ## 常见报错
 
 - `font not found` 或 `cannot find font file`：通常是字体文件缺失、文件名大小写不一致，或没有放在 `fonts/` 目录。
