@@ -10,11 +10,13 @@
 
 如果使用 Overleaf 且只是想先预览：
 
-1. 下载、克隆或从 GitHub 导入本仓库。
-2. 将 Compiler 设置为 `XeLaTeX`。
-3. 将 Main document 设置为 `template-overleaf.tex`。
-4. 点击 Recompile。
-5. 能正常预览后，再根据需要切换到正式入口 `template.tex`。
+1. 在 GitHub 仓库页面点击 `Code`，选择 `Download ZIP`。
+2. 打开 Overleaf，选择 `New Project` -> `Upload Project`，上传刚下载的 zip 压缩包。
+3. 如果你的 Overleaf 账号支持 GitHub 导入或同步，也可以使用 GitHub 导入；免费用户通常直接上传 zip 最稳。
+4. 将 Compiler 设置为 `XeLaTeX`。
+5. 将 Main document 设置为 `template-overleaf.tex`。
+6. 点击 Recompile。
+7. 能正常预览后，再根据需要切换到正式入口 `template.tex`。
 
 如果准备正式写作或提交：
 
@@ -84,18 +86,20 @@ fc-match "SimSun"
 
 ### 方式一：免上传字体先跑通
 
-1. 打开 Overleaf。
-2. 新建项目，选择从 GitHub 导入，或先下载本仓库 zip 后上传。
-3. 确认项目根目录中有：
+1. 在 GitHub 仓库页面点击 `Code`，选择 `Download ZIP`。
+2. 打开 Overleaf。
+3. 新建项目，选择 `Upload Project`，上传刚下载的 zip 压缩包。
+4. 如果你的 Overleaf 账号支持 GitHub 导入或同步，也可以直接从 GitHub 导入；免费用户通常直接上传 zip 最稳。
+5. 确认项目根目录中有：
    - `template.tex`
    - `template-overleaf.tex`
    - `LZUThesis_xb.cls`
    - `bib/`
    - `figures/`
-4. 打开 Overleaf 左上角菜单。
-5. 将 Compiler 设置为 `XeLaTeX`。
-6. 将 Main document 设置为 `template-overleaf.tex`。
-7. 点击 Recompile。
+6. 打开 Overleaf 左上角菜单。
+7. 将 Compiler 设置为 `XeLaTeX`。
+8. 将 Main document 设置为 `template-overleaf.tex`。
+9. 点击 Recompile。
 
 `template-overleaf.tex` 使用 TeX Live/Overleaf 通常自带的 Fandol 字体，不需要上传 `SimSun.ttc`、`SimHei.ttf`、`SimFang.ttf` 和 `Arialbd.ttf`，适合第一次使用时先确认模板能编译。
 
