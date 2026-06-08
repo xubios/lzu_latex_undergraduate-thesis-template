@@ -1,14 +1,35 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{LZUThesis_xb}[2025/06/09 Lanzhou University undergraduate thesis template]
+\newif\ifLZU@overleaffonts
+\DeclareOption{overleaf}{\LZU@overleaffontstrue}
+\DeclareOption{doublelines}{\def\LZU@doublelines {}}
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbook}}
+\ProcessOptions\relax
 \LoadClass[12pt, a4paper, UTF8, openany, oneside, fontset=none]{ctexbook}
 
-% 使用模板自带字体（仍为 SimSun/SimHei），避免依赖系统字体安装状态
-\setCJKmainfont[Path = ./fonts/, Extension = .ttc]{SimSun}
-\setCJKsansfont[Path = ./fonts/, Extension = .ttf]{SimHei}
-\setCJKmonofont[Path = ./fonts/, Extension = .ttc]{SimSun}
-\setCJKfamilyfont{zhsong}[Path = ./fonts/, Extension = .ttc]{SimSun}
-\setCJKfamilyfont{zhhei}[Path = ./fonts/, Extension = .ttf]{SimHei}
-\setCJKfamilyfont{zhfs}[Path = ./fonts/, Extension = .ttf]{SimFang}
+% 默认使用 fonts/ 中的宋体、黑体、仿宋和 Arial Bold，正式提交时排版更接近学校规范。
+% overleaf 选项改用 TeX Live/Overleaf 通常自带的 Fandol 字体，便于无字体文件时先编译通过。
+\ifLZU@overleaffonts
+    \setCJKmainfont{FandolSong-Regular.otf}[BoldFont = FandolSong-Bold.otf]
+    \setCJKsansfont{FandolHei-Regular.otf}
+    \setCJKmonofont{FandolFang-Regular.otf}
+    \setCJKfamilyfont{zhsong}{FandolSong-Regular.otf}[BoldFont = FandolSong-Bold.otf]
+    \setCJKfamilyfont{zhhei}{FandolHei-Regular.otf}
+    \setCJKfamilyfont{zhfs}{FandolFang-Regular.otf}
+    \newcommand{\LZUSongFont}{\CJKfamily{zhsong}}
+    \newcommand{\LZUFangFont}{\CJKfamily{zhfs}}
+    \newcommand{\LZUArialBoldFont}{\sffamily\bfseries}
+\else
+    \setCJKmainfont[Path = ./fonts/, Extension = .ttc]{SimSun}
+    \setCJKsansfont[Path = ./fonts/, Extension = .ttf]{SimHei}
+    \setCJKmonofont[Path = ./fonts/, Extension = .ttc]{SimSun}
+    \setCJKfamilyfont{zhsong}[Path = ./fonts/, Extension = .ttc]{SimSun}
+    \setCJKfamilyfont{zhhei}[Path = ./fonts/, Extension = .ttf]{SimHei}
+    \setCJKfamilyfont{zhfs}[Path = ./fonts/, Extension = .ttf]{SimFang}
+    \newcommand{\LZUSongFont}{\CJKfamily{zhsong}}
+    \newcommand{\LZUFangFont}{\CJKfamily{zhfs}}
+    \newcommand{\LZUArialBoldFont}{\fontspec[Path = ./fonts/, Extension = .ttf]{Arialbd}}
+\fi
 \providecommand{\songti}{\CJKfamily{zhsong}}
 \providecommand{\heiti}{\CJKfamily{zhhei}}
 \providecommand{\fangsong}{\CJKfamily{zhfs}}
@@ -208,10 +229,10 @@
 \newcommand{\figlabel}{图}
 \newcommand{\tbllabel}{表}
 
-\renewcommand{\cfttabpagefont}{\fontspec[Path = ./fonts/, Extension = .ttc]{SimSun}}
-\renewcommand{\cftfigpagefont}{\fontspec[Path = ./fonts/, Extension = .ttc]{SimSun}}
-\renewcommand{\cfttabfont}{\CJKfontspec[Path = ./fonts/, Extension = .ttc]{SimSun}\zihao{4}}
-\renewcommand{\cftfigfont}{\CJKfontspec[Path = ./fonts/, Extension = .ttc]{SimSun}\zihao{4}}
+\renewcommand{\cfttabpagefont}{\LZUSongFont}
+\renewcommand{\cftfigpagefont}{\LZUSongFont}
+\renewcommand{\cfttabfont}{\LZUSongFont\zihao{4}}
+\renewcommand{\cftfigfont}{\LZUSongFont\zihao{4}}
 
 % 自定义目录
 \newcommand{\customcontent}{
@@ -280,15 +301,10 @@
     \renewcommand{\headrulewidth}{0pt}
 
     \fancyfoot{} % clear all footer fields
-    \cfoot[C]{\zihao{5}\fontspec[Path = ./fonts/, Extension = .ttc]{SimSun}\thepage} %
+    \cfoot[C]{\zihao{5}\LZUSongFont\thepage} %
     \renewcommand{\thepage}{\Roman{page}}
 }
 \appto\frontmatter{\pagestyle{frontmatterstyle}}
-
-\DeclareOption{doublelines}{
-    \def\LZU@doublelines {}
-}
-\ProcessOptions\relax
 
 \fancypagestyle{mainmatterstyle}{
     \fancyhf{}
@@ -297,7 +313,7 @@
     % Footers
     \fancyfoot{} % clear all footer fields
     % 页码。页脚居中排，字体为宋体，五号。封面、目录不编排页码，中英文摘要页用罗马数字单独连续编号，引言、正文用阿拉伯数字连续编号，附录可不编排页码
-    \cfoot[C]{\zihao{5}\fontspec[Path = ./fonts/, Extension = .ttc]{SimSun}\thepage}
+    \cfoot[C]{\zihao{5}\LZUSongFont\thepage}
     \renewcommand\headrule{ \kern 0.8pt \hrule width \hsize height 0.3pt}
 }
 
@@ -406,18 +422,15 @@
 
         \begin{tabular}{cc}
             {\songti \zihao{3}{学生姓名}}       &
-            {\LZUunderline[180pt]{ \songti\fontspec[Path = ./fonts/, Extension = .ttc]{SimSun} \zihao{3}\@author}}       \\[0.40cm]
+            {\LZUunderline[180pt]{ \songti\LZUSongFont \zihao{3}\@author}}       \\[0.40cm]
             {\songti \zihao{3}{指导教师}}       &
-            {\LZUunderline[180pt]{ \songti\fontspec[Path = ./fonts/, Extension = .ttc]{SimSun} \zihao{3}  \the\advisor}} \\[0.40cm]
+            {\LZUunderline[180pt]{ \songti\LZUSongFont \zihao{3}  \the\advisor}} \\[0.40cm]
             {\songti \zihao{3}{学\qquad 院}}  &
             {\LZUunderline[180pt]{ \songti  \zihao{3} \the\college}} \\[0.40cm]
             {\songti \zihao{3} {专\hfill 业}} &
             {\LZUunderline[180pt]{ \songti  \zihao{3} \the\major}}   \\[0.40cm]
             {\songti \zihao{3}{年\qquad 级}}  &
-            {\LZUunderline[180pt]{ \songti\fontspec[
-                Path = ./fonts/,  % 字体文件所在的目录
-                Extension = .ttc, % 字体文件扩展名
-            ]{SimSun} \zihao{3}  \the\grade}}   \\[0.40cm]
+            {\LZUunderline[180pt]{ \songti\LZUSongFont \zihao{3}  \the\grade}}   \\[0.40cm]
         \end{tabular}
         \par
         \vspace{40pt}
@@ -646,8 +659,8 @@
     \linespread{1}
     \selectfont
     \setlength{\parskip}{18pt}
-    %Linux没有这个字体，需要自己安装，或者自定义命令
-    \zihao{3}\fontspec[Path = ./fonts/, Extension = .ttf]{Arialbd} Abstract
+    % 默认用 Arial Bold；overleaf 选项下用无衬线粗体近似替代，便于免上传字体编译。
+    \zihao{3}\LZUArialBoldFont Abstract
 \end{center}%
 \setlength{\parskip}{0pt}
 \setlength{\baselineskip}{20pt} %行距20磅
@@ -701,10 +714,7 @@
     \phantomsection
     \addcontentsline{toc}{chapter}{\texorpdfstring{致\qquad 谢}{致谢}}
     \chapter*{\texorpdfstring{致\qquad 谢}{致谢}}
-    \zihao{-4}\fangsong\fontspec[
-        Path = ./fonts/,  % 字体文件所在的目录
-        Extension = .ttf, % 字体文件扩展名
-    ]{SimFang}
+    \zihao{-4}\fangsong\LZUFangFont
     \setlength{\parindent}{2em}
 }
 
@@ -842,10 +852,7 @@
 \def\tagform@#1{%
   \maketag@@@{%
     \zihao{5}% 设置五号字（CTeX的字号命令）
-    \fontspec[
-        Path = ./fonts/,  % 字体文件所在的目录
-        Extension = .ttc, % 字体文件扩展名
-    ]{SimSun}% 显式指定宋体（确保中英文统一）
+    \LZUSongFont% 显式指定宋体或 Overleaf 兼容替代字体（确保中英文统一）
     (#1)% 添加括号（可选，如需去括号则删除）
   }%
 }

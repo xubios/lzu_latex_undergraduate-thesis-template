@@ -73,6 +73,8 @@ fc-match "SimSun"
 
 这是一种“规范优先”的设计：PDF 字形更接近学校要求，但首次使用前必须准备字体。由于字体版权原因，本仓库不提供字体文件，也不提供第三方下载链接。
 
+如果只是想在 Overleaf 上先预览模板，可以将 Main document 设置为 `template-overleaf.tex`。该入口使用 Fandol 字体近似替代，不需要上传本目录中的字体文件；正式提交前仍建议准备规范字体，并改回 `template.tex`。
+
 ## 常见报错
 
 - `font not found` 或 `cannot find font file`：通常是字体文件缺失、文件名大小写不一致，或没有放在 `fonts/` 目录。

@@ -72,21 +72,37 @@ fc-match "SimSun"
 
 ## Overleaf 配置
 
-### 方式一：从 GitHub 导入
+### 方式一：免上传字体先跑通
 
 1. 打开 Overleaf。
 2. 新建项目，选择从 GitHub 导入，或先下载本仓库 zip 后上传。
 3. 确认项目根目录中有：
    - `template.tex`
+   - `template-overleaf.tex`
    - `LZUThesis_xb.cls`
    - `bib/`
    - `figures/`
-   - `fonts/`
-4. 上传四个字体文件到 `fonts/` 目录。
-5. 打开 Overleaf 左上角菜单。
-6. 将 Compiler 设置为 `XeLaTeX`。
-7. 将 Main document 设置为 `template.tex`。
-8. 点击 Recompile。
+4. 打开 Overleaf 左上角菜单。
+5. 将 Compiler 设置为 `XeLaTeX`。
+6. 将 Main document 设置为 `template-overleaf.tex`。
+7. 点击 Recompile。
+
+`template-overleaf.tex` 使用 TeX Live/Overleaf 通常自带的 Fandol 字体，不需要上传 `SimSun.ttc`、`SimHei.ttf`、`SimFang.ttf` 和 `Arialbd.ttf`，适合第一次使用时先确认模板能编译。
+
+### 方式二：正式字体模式
+
+正式提交前，建议使用更接近学校规范的字体模式：
+
+1. 按“字体准备”一节准备合法获得的四个字体文件。
+2. 上传 `SimSun.ttc`、`SimHei.ttf`、`SimFang.ttf` 和 `Arialbd.ttf` 到 Overleaf 项目的 `fonts/` 目录。
+3. 确认文件名大小写完全一致。
+4. 将 Main document 改为 `template.tex`。
+5. 使用 XeLaTeX 重新编译。
+
+两种入口的区别：
+
+- `template.tex`：正式入口，默认加载 `fonts/` 中的宋体、黑体、仿宋和 Arial Bold，更接近学校写作规范。
+- `template-overleaf.tex`：体验入口，使用 Fandol 字体近似替代，不需要上传字体，适合先跑通和预览。
 
 ### Overleaf 参考文献刷新
 
@@ -103,6 +119,7 @@ fc-match "SimSun"
 
 - 找不到字体：检查 `fonts/` 目录和文件名大小写。
 - 为什么有些学长模板不用上传字体也能编译：那些模板通常使用 CTeX/Overleaf 默认字体，例如 Fandol 字体。本模板为了更接近学校规范中的宋体、黑体、仿宋效果，默认加载 `fonts/` 目录中的指定字体文件，因此需要先自行准备合法字体。
+- 不想上传字体但想先预览：将 Main document 设置为 `template-overleaf.tex`。
 - 中文乱码或方框：确认 Compiler 是 `XeLaTeX`。
 - 图片找不到：确认图片在 `figures/` 目录，并且正文中路径大小写一致。
 - 本地能编译，Overleaf 不能编译：优先检查字体文件名大小写和是否上传完整。

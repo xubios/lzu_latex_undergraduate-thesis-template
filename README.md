@@ -34,7 +34,9 @@
 ```text
 .
 ├── LZUThesis_xb.cls
-├── template.tex
+├── LZUThesis_xb_overleaf.cls
+├── template.tex           # 正式入口，默认使用 fonts/ 中的规范字体文件
+├── template-overleaf.tex  # Overleaf 免上传字体体验入口，使用 Fandol 近似字体
 ├── CONFIG.md           # LaTeX 环境配置教程
 ├── bib/
 │   ├── lzubib.bst
@@ -55,6 +57,11 @@
 推荐使用 TeX Live 2024 或更新版本，并使用 XeLaTeX 编译。
 
 如果第一次配置 LaTeX 环境，建议先阅读 [CONFIG.md](CONFIG.md)，其中包含 Overleaf、Windows、VS Code、命令行编译和常见报错说明。
+
+本仓库提供两个入口：
+
+- `template.tex`：正式入口。默认从 `fonts/` 目录加载宋体、黑体、仿宋和 Arial Bold，更接近学校写作规范，正式提交前推荐使用。
+- `template-overleaf.tex`：Overleaf 免上传字体体验入口。使用 TeX Live/Overleaf 通常自带的 Fandol 字体近似替代，可以不上传字体先编译跑通，但字形与宋体、黑体、仿宋不完全一致。
 
 如果正文中使用 BibTeX 参考文献，推荐编译顺序：
 
@@ -97,6 +104,8 @@ macOS 和 Linux 用户通常不会自带 `SimSun.ttc`、`SimHei.ttf`、`SimFang.
 
 部分模板使用 CTeX/Overleaf 默认字体，例如 Fandol 字体，因此可以直接编译。本模板为了更接近兰州大学写作规范中的宋体、黑体、仿宋效果，默认从 `fonts/` 目录加载指定字体文件。由于字体版权原因，仓库不提供字体文件或下载链接，使用者需要自行准备合法获得的字体。
 
+如果只是想在 Overleaf 上先跑通模板，可以把 Main document 设置为 `template-overleaf.tex`。该入口不需要上传字体文件，但属于“体验/预览模式”；正式提交前，仍建议改回 `template.tex` 并准备规范字体。
+
 ## 配置教程
 
 - Overleaf、Windows、VS Code、命令行编译和常见报错请见 [CONFIG.md](CONFIG.md)。
@@ -135,13 +144,15 @@ macOS 和 Linux 用户通常不会自带 `SimSun.ttc`、`SimHei.ttf`、`SimFang.
 
 ## 使用方法
 
-1. 先将合法获得的字体文件放入 `fonts/` 目录。缺少字体时，模板通常不能直接编译。
+1. 正式提交建议使用 `template.tex`。先将合法获得的字体文件放入 `fonts/` 目录；缺少字体时，正式入口通常不能直接编译。
 2. 修改 `template.tex` 中的题目、作者、学院、专业、年级和导师信息。
 3. 在 `\ZhAbstract{...}{...}` 和 `\EnAbstract{...}{...}` 中填写中英文摘要与关键词。
 4. 在 `\mainmatter` 后写正文。
 5. 在 `bib/template.bib` 中维护参考文献，并用 `\newupcite{key}` 或 `\cite{key}` 引用。
 6. 在 `\Thanks` 后填写致谢。
 7. 如需成绩表，保留 `\Grade`；如学院不要求电子版成绩表，可按实际要求删除或注释。
+
+Overleaf 新手可以先使用 `template-overleaf.tex` 作为 Main document，不上传字体也能预览模板效果；确认环境没问题后，再回到正式入口 `template.tex`。
 
 ## 新手检查清单
 
