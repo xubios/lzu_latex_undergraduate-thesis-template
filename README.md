@@ -8,6 +8,8 @@
 >
 > 重要：正式入口 `template.tex` 因字体版权原因不包含宋体、黑体、仿宋和 Arial Bold 字体文件，首次正式使用前请先按 [字体说明](#字体说明) 或 [fonts/README.md](fonts/README.md) 准备合法获得的字体文件，并放入 `fonts/` 目录。若只是想在 Overleaf 上先跑通模板，可直接使用免上传字体入口 `template-overleaf.tex`。
 
+> 写作提醒：写论文内容时请修改 `template.tex`。`template-overleaf.tex` 只是 Overleaf 免上传字体入口，用来调用 `template.tex` 并启用 `overleaf` 字体模式；不要把正文直接写在 `template-overleaf.tex` 里。
+
 ## 适配依据
 
 本模板主要参考兰州大学本科毕业论文（设计）写作规范、历年本科毕业论文（设计）工作通知及前辈模板实践整理而成。当前版本重点参考并适配了：
@@ -55,6 +57,8 @@
 
 - 想先在 Overleaf 上快速预览：使用 `template-overleaf.tex`，不需要上传字体，适合零基础先确认模板能编译。
 - 准备正式写作或提交：使用 `template.tex`，需要自行准备合法字体，排版更接近学校规范。
+
+无论使用哪种入口，论文正文、题目、作者、学院、专业和参考文献调用等内容都应写在 `template.tex` 中；`template-overleaf.tex` 只负责给 `template.tex` 套用 Overleaf 免字体模式。
 
 ## 编译环境
 
