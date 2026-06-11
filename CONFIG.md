@@ -103,6 +103,8 @@ fc-match "SimSun"
 
 `template-overleaf.tex` 使用 TeX Live/Overleaf 通常自带的 Fandol 字体，不需要上传 `SimSun.ttc`、`SimHei.ttf`、`SimFang.ttf` 和 `Arialbd.ttf`，适合第一次使用时先确认模板能编译。
 
+在 Overleaf 上写作时，请打开 `template.tex` 修改题目、作者、学院、专业、正文、参考文献等论文内容；修改完成后，回到 `template-overleaf.tex` 编译。`template-overleaf.tex` 只是免上传字体入口套壳，不建议直接在其中写正文。
+
 ### 方式二：正式字体模式
 
 正式提交前，建议使用更接近学校规范的字体模式：
@@ -117,6 +119,8 @@ fc-match "SimSun"
 
 - `template.tex`：正式入口，默认加载 `fonts/` 中的宋体、黑体、仿宋和 Arial Bold，更接近学校写作规范。
 - `template-overleaf.tex`：体验入口，使用 Fandol 字体近似替代，不需要上传字体，适合先跑通和预览。
+
+如果使用本地环境，请按本教程配置好 TeX Live、VS Code/LaTeX Workshop 和 `fonts/` 目录后，直接编译 `template.tex`。
 
 ### Overleaf 参考文献刷新
 

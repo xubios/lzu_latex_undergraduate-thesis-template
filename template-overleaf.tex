@@ -2,10 +2,17 @@
 % !TEX encoding = UTF-8 Unicode
 %
 % Overleaf 免上传字体体验入口。
-% 本文件会让 template.tex 使用 LZUThesis_xb 的 overleaf 字体模式：
-% - 不需要上传 SimSun.ttc、SimHei.ttf、SimFang.ttf、Arialbd.ttf 也能先编译。
-% - 字体使用 TeX Live/Overleaf 通常自带的 Fandol 字体近似替代。
-% - 正式提交前仍建议使用 template.tex，并按 fonts/README.md 准备规范字体。
+%
+% 重要：
+% - 如果在 Overleaf 上使用，请在 template.tex 中编辑题目、作者、正文、参考文献等论文内容；
+%   编辑完成后回到本文件 template-overleaf.tex 编译。
+% - 本文件只是入口套壳，通过 \input{template.tex} 调用 template.tex，并启用 LZUThesis_xb 的
+%   overleaf 字体模式；不要把论文正文直接写在本文件中。
+% - 使用本入口不需要上传 SimSun.ttc、SimHei.ttf、SimFang.ttf、Arialbd.ttf，可以先在 Overleaf
+%   上预览和编辑。
+% - 如果使用本地环境，请按 README.md、CONFIG.md 和 fonts/README.md 配置好字体与编译环境后，
+%   直接编译 template.tex。
+% - 正式提交前仍建议准备合法获得的规范字体，并使用 template.tex 编译。
 
 \PassOptionsToClass{overleaf}{LZUThesis_xb}
 \input{template.tex}
